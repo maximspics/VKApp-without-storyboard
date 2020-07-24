@@ -40,7 +40,7 @@ extension NSBezierPath {
     {
         self.init()
         
-        let maxCorner = min(rect.widthOfLargerImage, rect.heightOfLargerImage) / 2
+        let maxCorner = min(rect.widthOfLargeImage, rect.heightOfLargeImage) / 2
         
         let radiusTopLeft = min(maxCorner, max(0, topLeftRadius))
         let radiusTopRight = min(maxCorner, max(0, topRightRadius))
