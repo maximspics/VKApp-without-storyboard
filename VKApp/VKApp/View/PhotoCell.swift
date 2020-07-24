@@ -40,11 +40,15 @@ class PhotoCell: UICollectionViewCell {
         image.image = nil
     }
     
-    public func configureLargestSizeOfImage(witch photo: Photo) {
-        self.image.kf.setImage(with: URL(string: photo.imageURLWithTheLargestSize))
+    public func configureLargeImageSize(witch photo: Photo) {
+        self.image.kf.setImage(with: URL(string: photo.imageURLLargeSize))
     }
     
-    public func configureSmallestSizeOfImage(witch photo: Photo) {
-        self.image.kf.setImage(with: URL(string: photo.imageURLWithTheSmallestSize))
+    public func configureMediumImageSize(witch photo: Photo) {
+        self.image.kf.setImage(with: URL(string: photo.imageURLMediumSize))
+    }
+    
+    public func configureSmallImageSize(witch photo: Photo) {
+        self.image.kf.setImage(with: URL(string: photo.imageURLSmallSize))
     }
 }

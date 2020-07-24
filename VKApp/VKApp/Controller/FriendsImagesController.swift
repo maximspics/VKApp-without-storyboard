@@ -245,13 +245,15 @@ extension FriendsImagesController: UICollectionViewDelegate, UICollectionViewDat
         if Settings.shared.records.count > 0 {
             let getLastRecord = Settings.shared.records[Settings.shared.records.count - 1]
             switch getLastRecord.selectedStyle {
-            case _ where getLastRecord.selectedStyle == .oneColumn || getLastRecord.selectedStyle == .threeColumns:
-                cell.configureLargestSizeOfImage(witch: photo)
+            case _ where getLastRecord.selectedStyle == .oneColumn:
+                cell.configureLargeImageSize(witch: photo)
+            case _ where getLastRecord.selectedStyle == .threeColumns || getLastRecord.selectedStyle == .fiveColumns:
+                cell.configureMediumImageSize(witch: photo)
             default:
-                cell.configureSmallestSizeOfImage(witch: photo)
+                cell.configureSmallImageSize(witch: photo)
             }
         } else {
-            cell.configureLargestSizeOfImage(witch: photo)
+            cell.configureMediumImageSize(witch: photo)
         }
         return cell
     }
